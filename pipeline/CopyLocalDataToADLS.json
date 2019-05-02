@@ -81,7 +81,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_r0o",
+						"referenceName": "LocalSalesToADLS",
 						"type": "DatasetReference"
 					}
 				],
