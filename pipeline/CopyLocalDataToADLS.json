@@ -33,9 +33,14 @@
 						}
 					},
 					"sink": {
-						"type": "ParquetSink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureDataLakeStoreWriteSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSetting",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -48,8 +53,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"name": "First",
-									"type": "String"
+									"type": "String",
+									"ordinal": 1
 								}
 							},
 							{
@@ -58,8 +63,8 @@
 									"type": "String"
 								},
 								"sink": {
-									"name": "Last",
-									"type": "String"
+									"type": "String",
+									"ordinal": 2
 								}
 							},
 							{
@@ -68,8 +73,8 @@
 									"type": "Date"
 								},
 								"sink": {
-									"name": "DOB",
-									"type": "DateTime"
+									"type": "DateTime",
+									"ordinal": 3
 								}
 							},
 							{
@@ -78,8 +83,8 @@
 									"type": "DateTime"
 								},
 								"sink": {
-									"name": "LastModified",
-									"type": "DateTime"
+									"type": "DateTime",
+									"ordinal": 4
 								}
 							}
 						]
@@ -93,7 +98,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureDataLakeStoreMain",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
