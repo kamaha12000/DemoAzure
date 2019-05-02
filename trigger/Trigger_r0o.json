@@ -1,0 +1,23 @@
+{
+	"name": "Trigger_r0o",
+	"properties": {
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopLocalDataToAzure",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 1,
+				"startTime": "2019-05-01T21:55:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

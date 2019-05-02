@@ -1,0 +1,40 @@
+{
+	"name": "SourceDataset_r0o",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer1",
+			"type": "LinkedServiceReference"
+		},
+		"type": "SqlServerTable",
+		"structure": [
+			{
+				"name": "customerid",
+				"type": "String"
+			},
+			{
+				"name": "lastname",
+				"type": "String"
+			},
+			{
+				"name": "firstname",
+				"type": "String"
+			},
+			{
+				"name": "birthday",
+				"type": "Date"
+			},
+			{
+				"name": "createdon",
+				"type": "DateTime"
+			},
+			{
+				"name": "modifiedon",
+				"type": "DateTime"
+			}
+		],
+		"typeProperties": {
+			"tableName": "[dbo].[customers]"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

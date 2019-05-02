@@ -1,0 +1,6 @@
+{
+	"name": "IntegrateLocal",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
