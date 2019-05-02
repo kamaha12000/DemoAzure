@@ -24,7 +24,13 @@
 				],
 				"typeProperties": {
 					"source": {
-						"type": "SqlServerSource"
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureDataLakeStoreReadSetting"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSetting"
+						}
 					},
 					"sink": {
 						"type": "ParquetSink",
@@ -81,7 +87,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "LocalSalesToADLS",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				],
