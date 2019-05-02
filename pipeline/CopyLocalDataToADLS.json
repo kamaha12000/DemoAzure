@@ -23,9 +23,6 @@
 					}
 				],
 				"typeProperties": {
-					"source": {
-						"type": "SqlServerSource"
-					},
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
@@ -84,12 +81,6 @@
 						]
 					}
 				},
-				"inputs": [
-					{
-						"referenceName": "LocalSalesToADLS",
-						"type": "DatasetReference"
-					}
-				],
 				"outputs": [
 					{
 						"referenceName": "DelimitedText1",
