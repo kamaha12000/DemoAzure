@@ -5,7 +5,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "CopLocalDataToAzure",
+					"referenceName": "CopyLocalDataToAzure",
 					"type": "PipelineReference"
 				}
 			}
