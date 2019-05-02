@@ -1,0 +1,13 @@
+{
+	"name": "AzureDataLakeStore2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "AzureDataLakeStore",
+		"typeProperties": {
+			"dataLakeStoreUri": "https://inodalake.azuredatalakestore.net/webhdfs/v1",
+			"tenant": "0240d3b8-e873-4a8f-acf3-90f41a537f35",
+			"subscriptionId": "b4b4258f-d8aa-4606-8e05-8e0827fd0d27",
+			"resourceGroupName": "datafactory"
+		}
+	}
+}
