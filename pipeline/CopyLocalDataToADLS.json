@@ -23,6 +23,9 @@
 					}
 				],
 				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource"
+					},
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
@@ -34,53 +37,14 @@
 							"fileExtension": ".txt"
 						}
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "firstname",
-									"type": "String"
-								},
-								"sink": {
-									"type": "String",
-									"ordinal": 1
-								}
-							},
-							{
-								"source": {
-									"name": "lastname",
-									"type": "String"
-								},
-								"sink": {
-									"type": "String",
-									"ordinal": 2
-								}
-							},
-							{
-								"source": {
-									"name": "birthday",
-									"type": "Date"
-								},
-								"sink": {
-									"type": "DateTime",
-									"ordinal": 3
-								}
-							},
-							{
-								"source": {
-									"name": "modifiedon",
-									"type": "DateTime"
-								},
-								"sink": {
-									"type": "DateTime",
-									"ordinal": 4
-								}
-							}
-						]
-					}
+					"enableStaging": false
 				},
+				"inputs": [
+					{
+						"referenceName": "SqlServerTable1",
+						"type": "DatasetReference"
+					}
+				],
 				"outputs": [
 					{
 						"referenceName": "DelimitedText1",
