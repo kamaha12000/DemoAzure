@@ -1,0 +1,96 @@
+{
+  "name": "CopLocalDataToAzure",
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy_r0o",
+        "type": "Copy",
+        "policy": {
+          "timeout": "7.00:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "userProperties": [
+          {
+            "name": "Source",
+            "value": "[dbo].[customers]"
+          },
+          {
+            "name": "Destination",
+            "value": "[dbo].[contact]"
+          }
+        ],
+        "typeProperties": {
+          "source": {
+            "type": "SqlServerSource"
+          },
+          "sink": {
+            "type": "AzureSqlSink",
+            "writeBatchSize": 10000
+          },
+          "enableStaging": false,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "firstname",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "First",
+                  "type": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "lastname",
+                  "type": "String"
+                },
+                "sink": {
+                  "name": "Last",
+                  "type": "String"
+                }
+              },
+              {
+                "source": {
+                  "name": "birthday",
+                  "type": "Date"
+                },
+                "sink": {
+                  "name": "DOB",
+                  "type": "DateTime"
+                }
+              },
+              {
+                "source": {
+                  "name": "modifiedon",
+                  "type": "DateTime"
+                },
+                "sink": {
+                  "name": "LastModified",
+                  "type": "DateTime"
+                }
+              }
+            ]
+          }
+        },
+        "inputs": [
+          {
+            "referenceName": "SourceDataset_r0o",
+            "type": "DatasetReference"
+          }
+        ],
+        "outputs": [
+          {
+            "referenceName": "DestinationDataset_r0o",
+            "type": "DatasetReference"
+          }
+        ]
+      }
+    ]
+  },
+  "type": "Microsoft.DataFactory/factories/pipelines"
+}
