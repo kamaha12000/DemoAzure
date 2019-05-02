@@ -33,7 +33,7 @@
 			}
 		],
 		"typeProperties": {
-			"tableName": "[dbo].[Sales]"
+			"tableName": "[dbo].[customers]"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
