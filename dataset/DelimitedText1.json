@@ -9,10 +9,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureDataLakeStoreLocation",
-				"fileName": {
-					"value": "@concat('export_', formatDateTime(utcnow(), 'ss'))",
-					"type": "Expression"
-				},
+				"fileName": "exports.txt",
 				"folderPath": "SalesData"
 			},
 			"columnDelimiter": ",",
